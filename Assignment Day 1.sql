@@ -56,7 +56,10 @@ FROM member
 WHERE REGEXP_LIKE(member_name, '^[rg].*i', 'i');
 
 -- Query 11
-
+SELECT INITCAP(Book_Name) AS Book_Name,
+       UPPER(Author_name) AS Author_Name
+FROM Books
+ORDER BY Book_Name DESC;
 
 -- Query 12
 select LIB_ISSUE_ID,BOOK_NO,TO_CHAR(ISSUE_DATE, 'Day, Month, DD, YYYY'),TO_CHAR(RETURN_DATE, 'Day, Month, DD, YYYY') from issue where MEMBER_ID='10001'
@@ -108,3 +111,4 @@ select member_id,member_name,substr(MEMBERSHIP_TYPE,1,5)  as MEMBERSHIP_TYPE fro
 
 -- Query 25
 select LIB_ISSUE_ID,member_id,book_no,last_day(issue_date) as last_day_of_month from issue; 
+
