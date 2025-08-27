@@ -1,4 +1,30 @@
 -- Query 1
+CREATE TABLE Member (
+    Member_Id NUMBER(5) ,
+    Member_Name VARCHAR2(30),
+    Member_address VARCHAR2(50),
+    Acc_Open_Date DATE,
+    Membership_type VARCHAR2(20),
+    Fees_paid NUMBER(4),
+    Max_Books_Allowed NUMBER(2),
+    Penalty_Amount NUMBER(7,2) DEFAULT 0
+);
+
+CREATE TABLE Books (
+    Book_No NUMBER(6) ,
+    Book_Name VARCHAR2(30),
+    Author_name VARCHAR2(30),
+    Cost NUMBER(7,2),
+    Category CHAR(10)
+);
+
+CREATE TABLE Issue (
+    Lib_Issue_Id NUMBER(10),
+    Book_No NUMBER(6),
+    Member_Id NUMBER(5),
+    Issue_Date DATE,
+    Return_date DATE,
+);
 
 -- Query 2
 select * from books;
